@@ -26,11 +26,20 @@ public class CalculatorModelTest {
         Assert.assertEquals(3, calculatorModel.getResult(), accuracy);
     }
 
-    @Test public void testCanAddTwoDecimals(){
+    @Test
+    public void testCanAddTwoDecimals(){
         calculatorModel.add(1.23f, 4.56f);
         Assert.assertEquals(5.79f, calculatorModel.getResult(), accuracy);
     }
 
-
+    @Test
+    public void testCanAddNegativeIntegers(){
+        calculatorModel.add(-1, 2);
+        Assert.assertEquals(1, calculatorModel.getResult(), accuracy);
+        calculatorModel.add(1, -2);
+        Assert.assertEquals(-1, calculatorModel.getResult(), accuracy);
+        calculatorModel.add(-3, -2);
+        Assert.assertEquals(-5, calculatorModel.getResult(), accuracy);
+    }
 
 }
