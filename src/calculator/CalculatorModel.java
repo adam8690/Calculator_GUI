@@ -5,24 +5,11 @@ package calculator;
  */
 public class CalculatorModel {
 
-    double firstNum;
-    double secondNum;
     private double result;
+    private double accuracy = 0.000000001;
 
-    public double getFirstNum() {
-        return firstNum;
-    }
-
-    public void setFirstNum(double firstNum) {
-        this.firstNum = firstNum;
-    }
-
-    public double getSecondNum() {
-        return secondNum;
-    }
-
-    public void setSecondNum(double secondNum) {
-        this.secondNum = secondNum;
+    public double getAccuracy() {
+        return accuracy;
     }
 
     public double getResult() {
@@ -36,5 +23,11 @@ public class CalculatorModel {
     public void add(double firstNum, double secondNum){
         this.result = firstNum + secondNum;
     }
+
+    public void subtract(double firstNum, double secondNum){
+        this.result = firstNum - secondNum;
+    }
+
+
 
 }

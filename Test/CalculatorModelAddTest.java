@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class CalculatorModelTest {
+public class CalculatorModelAddTest {
 
     CalculatorModel calculatorModel;
     double accuracy;
@@ -16,7 +16,7 @@ public class CalculatorModelTest {
     @Before
     public void before(){
         calculatorModel = new CalculatorModel();
-        accuracy = 0.000000001;
+        accuracy = calculatorModel.getAccuracy();
     }
 
     @Test
