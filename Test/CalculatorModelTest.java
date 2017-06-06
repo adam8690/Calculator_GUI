@@ -19,9 +19,9 @@ public class CalculatorModelTest {
     }
 
     @Test
-    public void testCanAddTwoNumbers(){
-        float result = calculatorModel.add(1, 2);
-        Assert.assertEquals(3, result);
+    public void testCanAddTwoIntegers(){
+        calculatorModel.add(1, 2);
+        Assert.assertEquals(3, calculatorModel.getResult(), 0.000000001);
     }
 
 
