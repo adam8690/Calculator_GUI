@@ -12,16 +12,23 @@ import org.junit.Test;
 public class CalculatorModelTest {
 
     CalculatorModel calculatorModel;
+    float accuracy;
 
     @Before
     public void before(){
         calculatorModel = new CalculatorModel();
+        accuracy = 0.000000001f;
     }
 
     @Test
     public void testCanAddTwoIntegers(){
         calculatorModel.add(1, 2);
-        Assert.assertEquals(3, calculatorModel.getResult(), 0.000000001);
+        Assert.assertEquals(3, calculatorModel.getResult(), accuracy);
+    }
+
+    @Test public void testCanAddTwoDecimals(){
+        calculatorModel.add(1.23f, 4.56f);
+        Assert.assertEquals(5.79f, calculatorModel.getResult(), accuracy);
     }
 
 
