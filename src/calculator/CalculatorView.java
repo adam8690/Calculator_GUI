@@ -11,9 +11,10 @@ public class CalculatorView extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("calculatorGUI.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("Calculator");
+        primaryStage.setScene(new Scene(root, 240, 400));
         primaryStage.show();
+        primaryStage.setResizable(false);
     }
 
 
