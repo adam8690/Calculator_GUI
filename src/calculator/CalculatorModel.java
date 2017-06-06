@@ -5,35 +5,35 @@ package calculator;
  */
 public class CalculatorModel {
 
-    float firstNum;
-    float secondNum;
-    private float result;
+    double firstNum;
+    double secondNum;
+    private double result;
 
-    public float getFirstNum() {
+    public double getFirstNum() {
         return firstNum;
     }
 
-    public void setFirstNum(float firstNum) {
+    public void setFirstNum(double firstNum) {
         this.firstNum = firstNum;
     }
 
-    public float getSecondNum() {
+    public double getSecondNum() {
         return secondNum;
     }
 
-    public void setSecondNum(float secondNum) {
+    public void setSecondNum(double secondNum) {
         this.secondNum = secondNum;
     }
 
-    public float getResult() {
+    public double getResult() {
         return result;
     }
 
-    public void setResult(float result) {
+    public void setResult(double result) {
         this.result = result;
     }
 
-    public void add(float firstNum, float secondNum){
+    public void add(double firstNum, double secondNum){
         this.result = firstNum + secondNum;
     }
 
