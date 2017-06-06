@@ -32,6 +32,10 @@ public class CalculatorModel {
         this.result = firstNum * secondNum;
     }
 
+    public void divide(double firstNum, double secondNum){
+        this.result = firstNum / secondNum;
+    }
+
 
 
 }

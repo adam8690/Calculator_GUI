@@ -49,5 +49,5 @@ public class CalculatorModelDivideTest {
         calculatorModel.divide(-1.444, -3.666);
         Assert.assertEquals(0.3938897981, calculatorModel.getResult(), accuracy);
     }
-    
+
 }
