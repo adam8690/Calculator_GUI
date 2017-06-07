@@ -1,55 +1,72 @@
 package calculator;
 
-import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
+import static calculator.CalculatorView.*;
 
 public class CalculatorController {
 
     double firstNum;
     double secondNum;
-    String operator;
+    String numberToShow = "";
+    String operator = "none";
+    CalculatorView calculatorView;
 
-    public void handleClearClick(){
-        System.out.println("clear clicked");
-    }
+//  as this class is specified in FXML file as the controller and the label showing the calculator display has an fxid of display, the variable display here
+//  knows it refers to the calculator display.
+    @FXML
+    Label display;
+
 
     public void handleOneClick(){
-        System.out.println("one clicked");
+        this.numberToShow += '1';
+        display.setText(this.numberToShow);
     }
 
     public void handleTwoClick(){
-        System.out.println("Two clicked");
+        this.numberToShow += '2';
+        display.setText(this.numberToShow);
     }
 
     public void handleThreeClick(){
-        System.out.println("Three clicked");
+        this.numberToShow += '3';
+        display.setText(this.numberToShow);
     }
 
     public void handleFourClick(){
-        System.out.println("Four clicked");
+        this.numberToShow += '4';
+        display.setText(this.numberToShow);
     }
 
     public void handleFiveClick(){
-        System.out.println("Five clicked");
+        this.numberToShow += '5';
+        display.setText(this.numberToShow);
     }
 
     public void handleSixClick(){
-        System.out.println("Six clicked");
+        this.numberToShow += '6';
+        display.setText(this.numberToShow);
     }
 
     public void handleSevenClick(){
-        System.out.println("Seven clicked");
+        this.numberToShow += '7';
+        display.setText(this.numberToShow);
     }
 
     public void handleEightClick(){
-        System.out.println("Eight clicked");
+        this.numberToShow += '8';
+        display.setText(this.numberToShow);
     }
 
     public void handleNineClick(){
-        System.out.println("Nine clicked");
+        this.numberToShow += '9';
+        display.setText(this.numberToShow);
     }
 
     public void handleZeroClick(){
-        System.out.println("Zero clicked");
+        this.numberToShow += '0';
+        display.setText(this.numberToShow);
     }
 
     public void handlePlusClick(){
@@ -61,19 +78,25 @@ public class CalculatorController {
     }
 
     public void handleTimesClick(){
-        System.out.println("Times clicked");
+        System.out.println("times clicked");
     }
 
     public void handleDivideClick(){
         System.out.println("divide clicked");
     }
 
+    public void handlePointClick(){
+        this.numberToShow += '.';
+        display.setText(this.numberToShow);
+    }
+
     public void handleEqualsClick(){
         System.out.println("Equals clicked");
     }
 
-    public void handlePointClick(){
-        System.out.println("Point clicked");
+    public void handleClearClick(){
+        this.numberToShow = "";
+        display.setText(this.numberToShow);
     }
 
 
