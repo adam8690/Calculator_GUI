@@ -36,6 +36,18 @@ public class CalculatorModel {
         this.result = firstNum / secondNum;
     }
 
+    public void performOperation(double firstNum, double secondNum, String operator){
+        switch (operator){
+            case "plus": add(firstNum, secondNum);
+            break;
+            case "minus": subtract(firstNum, secondNum);
+            break;
+            case "times": multiply(firstNum, secondNum);
+            break;
+            case "divide": divide(firstNum, secondNum);
+            break;
+        }
+    }
 
 
 }
