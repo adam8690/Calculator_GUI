@@ -30,7 +30,11 @@ public class CalculatorController {
     public void performOperation(){
         if(this.firstNum == null){
             this.firstNum = Double.parseDouble(display.getText());
-            clearDisplay();
+
+            if (this.firstNum == 0.0){
+                display.setText("No number entered");
+            }
+            else clearDisplay();
         }
         else {
             this.secondNum = Double.parseDouble(display.getText());
@@ -62,51 +66,81 @@ public class CalculatorController {
     }
 
     public void handleOneClick(){
+        if(this.result != null){
+            clearDisplay();
+        }
         this.numberToShow += "1";
         display.setText(this.numberToShow);
     }
 
     public void handleTwoClick(){
+        if(this.result != null){
+            clearDisplay();
+        }
         this.numberToShow += "2";
         display.setText(this.numberToShow);
     }
 
     public void handleThreeClick(){
+        if(this.result != null){
+            clearDisplay();
+        }
         this.numberToShow += "3";
         display.setText(this.numberToShow);
     }
 
     public void handleFourClick(){
+        if(this.result != null){
+            clearDisplay();
+        }
         this.numberToShow += "4";
         display.setText(this.numberToShow);
     }
 
     public void handleFiveClick(){
+        if(this.result != null){
+            clearDisplay();
+        }
         this.numberToShow += "5";
         display.setText(this.numberToShow);
     }
 
     public void handleSixClick(){
+        if(this.result != null){
+            clearDisplay();
+        }
         this.numberToShow += "6";
         display.setText(this.numberToShow);
     }
 
     public void handleSevenClick(){
+        if(this.result != null){
+            clearDisplay();
+        }
         this.numberToShow += "7";
         display.setText(this.numberToShow);
     }
 
     public void handleEightClick(){
+        if(this.result != null){
+            clearDisplay();
+        }
         this.numberToShow += "8";
         display.setText(this.numberToShow);
     }
 
     public void handleNineClick(){
+        if(this.result != null){
+            clearDisplay();
+        }
         this.numberToShow += "9";
         display.setText(this.numberToShow);
     }
 
     public void handleZeroClick(){
+        if(this.result != null){
+            clearDisplay();
+        }
         if(!this.numberToShow.equals("")){
             this.numberToShow += "0";
             display.setText(this.numberToShow);
@@ -114,7 +148,10 @@ public class CalculatorController {
     }
 
     public void handlePointClick(){
-        if(!this.decimal && this.numberToShow.equals("") ){
+        if(this.result != null){
+            display.setText("Cannot edit decimal");
+        }
+        else if(!this.decimal && this.numberToShow.equals("") ){
             this.numberToShow = "0.";
             display.setText(this.numberToShow);
             this.decimal = true;
@@ -155,7 +192,10 @@ public class CalculatorController {
     }
 
     public void handlePlusMinusClick(){
-        if(this.inputIsPositive) {
+        if(this.numberToShow == ""){
+            display.setText("Enter a number first");
+        }
+        else if(this.inputIsPositive) {
             this.inputIsPositive = false;
             this.numberToShow = "-" + this.numberToShow;
             display.setText(this.numberToShow);
@@ -174,6 +214,16 @@ public class CalculatorController {
             this.secondNum = null;
             this.operator = null;
             displayNumber(this.result);
+
+            if(this.numberToShow.charAt(0) == '-'){
+                this.inputIsPositive = false;
+            }
+            else this.inputIsPositive = true;
+
+            if(this.numberToShow.contains(".")){
+                this.decimal = true;
+            }
+            else this.decimal = false;
         }
     }
 }
