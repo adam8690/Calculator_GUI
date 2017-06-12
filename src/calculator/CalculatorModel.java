@@ -16,10 +16,6 @@ public class CalculatorModel {
         return result;
     }
 
-    public void setResult(double result) {
-        this.result = result;
-    }
-
     public void add(double firstNum, double secondNum){
         this.result = firstNum + secondNum;
     }

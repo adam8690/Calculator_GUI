@@ -12,7 +12,6 @@ public class CalculatorController {
     String operator;
     Boolean decimal = false;
     Boolean inputIsPositive = true;
-    CalculatorView calculatorView = new CalculatorView();
     CalculatorModel calculatorModel = new CalculatorModel();
 
 //  as this class is specified in FXML file as the controller and the label showing the calculator display has an fxid of display, the variable display here
@@ -23,6 +22,7 @@ public class CalculatorController {
     public void clearDisplay(){
         this.numberToShow = "";
         this.decimal = false;
+        this.inputIsPositive = true;
         this.result = null;
         display.setText("0");
     }
