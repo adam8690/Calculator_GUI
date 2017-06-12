@@ -11,6 +11,7 @@ public class CalculatorController {
     String numberToShow = "";
     String operator;
     Boolean decimal = false;
+    Boolean inputIsPositive = true;
     CalculatorView calculatorView = new CalculatorView();
     CalculatorModel calculatorModel = new CalculatorModel();
 
@@ -29,28 +30,35 @@ public class CalculatorController {
     public void performOperation(){
         if(this.firstNum == null){
             this.firstNum = Double.parseDouble(display.getText());
-            display.setText("");
             clearDisplay();
         }
         else {
             this.secondNum = Double.parseDouble(display.getText());
             clearDisplay();
-            switch (this.operator){
-                case "plus": this.calculatorModel.add(firstNum, secondNum);
-                break;
-                case "minus": this.calculatorModel.subtract(firstNum, secondNum);
-                break;
-                case "times": this.calculatorModel.multiply(firstNum, secondNum);
-                break;
-                case "divide": this.calculatorModel.divide(firstNum, secondNum);
-                break;
-            }
+            calculatorModel.performOperation(this.firstNum, this.secondNum, this.operator);
 
             this.result = calculatorModel.getResult();
-            display.setText(this.result.toString());
+            displayNumber(this.result);
             this.firstNum = this.result;
             this.secondNum = null;
         }
+    }
+
+    public void displayNumber(Double number){
+        String numberString = number.toString();
+
+//        remove trailing zeros from answer
+        int i = numberString.length() - 1;
+        char lastDigit = numberString.charAt(i);
+        while(i >= 0 && lastDigit == '0'){
+            i--;
+            lastDigit = numberString.charAt(i);
+        }
+        if (lastDigit == '.'){
+        i--;
+        }
+        this.numberToShow = numberString.substring(0, i + 1);
+        display.setText(this.numberToShow);
     }
 
     public void handleOneClick(){
@@ -146,13 +154,26 @@ public class CalculatorController {
         performOperation();
     }
 
+    public void handlePlusMinusClick(){
+        if(this.inputIsPositive) {
+            this.inputIsPositive = false;
+            this.numberToShow = "-" + this.numberToShow;
+            display.setText(this.numberToShow);
+        }
+        else {
+            this.numberToShow = display.getText().substring(1);
+            display.setText(this.numberToShow);
+            this.inputIsPositive = true;
+        }
+    }
+
     public void handleEqualsClick(){
         if(this.operator != null) {
             performOperation();
             this.firstNum = null;
             this.secondNum = null;
             this.operator = null;
-            display.setText(this.result.toString());
+            displayNumber(this.result);
         }
     }
 }

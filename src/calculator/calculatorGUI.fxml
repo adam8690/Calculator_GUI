@@ -47,7 +47,7 @@
             <Button fx:id="seven" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleSevenClick" prefHeight="127.0" prefWidth="60.0" text="7" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <Button fx:id="eight" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleEightClick" prefHeight="127.0" prefWidth="60.0" text="8" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <Button fx:id="nine" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleNineClick" prefHeight="127.0" prefWidth="60.0" text="9" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button fx:id="zero" minHeight="60.0" minWidth="123.0" mnemonicParsing="false" onAction="#handleZeroClick" text="0" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="zero" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleZeroClick" text="0" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
             <Button fx:id="point" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handlePointClick" prefHeight="127.0" prefWidth="60.0" text="." GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
             <Button fx:id="four" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleFourClick" prefHeight="127.0" prefWidth="60.0" text="4" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Button fx:id="three" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleThreeClick" prefHeight="127.0" prefWidth="60.0" text="3" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
@@ -58,6 +58,7 @@
             <Button fx:id="plus" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handlePlusClick" prefHeight="127.0" prefWidth="60.0" text="+" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
             <Button fx:id="times" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleTimesClick" prefHeight="127.0" prefWidth="60.0" text="x" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Button fx:id="clear" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleClearClick" prefHeight="60.0" prefWidth="60.0" text="Clear" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+            <Button fx:id="minus1" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#handlePlusMinusClick" prefHeight="127.0" prefWidth="60.0" text="-/+" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>
